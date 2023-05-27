@@ -7,3 +7,5 @@ class Post(models.Model):
     content = models.TextField()
     likes = models.PositiveIntegerField(default=0)
     views = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
