@@ -53,9 +53,9 @@ def blog(request):
 
 def search(request):
     posts = []
+    query = None
     if request.method == 'GET':
         query = request.GET.get('q')
-        print(query)
 
         if query:
             posts = Post.objects.filter(
@@ -65,7 +65,8 @@ def search(request):
             posts = Post.objects.all()
 
     context = {
-        'posts': posts
+        'posts': posts,
+        'query': query
     }
 
     return render(request, 'blog.html', context=context)

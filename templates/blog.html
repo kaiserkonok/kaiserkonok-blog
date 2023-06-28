@@ -28,7 +28,12 @@
     </form>
   </div>
 
-  {% if posts %} {% for post in posts %}
+  {% if query %}
+  <div class="search_query" style="margin-top: 20px">
+    <h2>Search: {{ query }}</h2>
+  </div>
+
+  {% endif %} {% if posts %} {% for post in posts %}
   <!-- container start -->
   <div class="container">
     <div class="thumbnail">
