@@ -14,15 +14,27 @@
   width: 300px;
 }
 
+.message {
+  margin-top: 20px;
+}
+
 
 @media screen and (max-width: 410px) {
   .search-box {
     width: 250px;
+  }
+
+  .message h1 {
+    font-size: 25px;
   }
 }
 
 @media screen and (max-width: 360px) {
   .search-box {
     width: 150px;
+  }
+  
+  .message h1 {
+    font-size: 20px;
   }
 }

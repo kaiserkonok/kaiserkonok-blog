@@ -28,17 +28,17 @@
     </form>
   </div>
 
-  {% for post in posts %}
-
-  <!--   container start -->
+  {% if posts %} {% for post in posts %}
+  <!-- container start -->
   <div class="container">
     <div class="thumbnail">
-      <a href="{% url 'post_detail' post.id %}"
-        ><img
+      <a href="{% url 'post_detail' post.id %}">
+        <img
           class="thumbnail_image"
           src="{{ post.thumbnail.url }}"
           alt="{{ post.title }}"
-      /></a>
+        />
+      </a>
     </div>
     <div class="content">
       <div class="post_title">
@@ -46,16 +46,18 @@
           <h1>{{ post.title }}</h1>
         </a>
       </div>
-      <div class="post_description">{{ post.content | truncatechars:115}}</div>
-
+      <div class="post_description">{{ post.content | truncatechars:115 }}</div>
       <div class="publish_time">
         <small>{{ post.created_at }}</small>
       </div>
     </div>
   </div>
-  <!--   container end -->
-
-  {% endfor %}
+  <!-- container end -->
+  {% endfor %} {% else %}
+  <div class="message">
+    <h1>There is no content!</h1>
+  </div>
+  {% endif %}
 </div>
 <!--  main end  -->
 
