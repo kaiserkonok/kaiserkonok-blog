@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
 
@@ -11,8 +12,9 @@ def home(request):
     context = {
         'posts': posts
     }
-    
+
     return render(request, 'home.html', context=context)
+
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -34,3 +36,36 @@ def post_detail(request, pk):
 
     return render(request, 'post_detail.html', context=context)
 
+
+def about(request):
+    return render(request, 'about.html')
+
+
+def blog(request):
+    posts = Post.objects.all()
+
+    context = {
+        'posts': posts
+    }
+
+    return render(request, 'blog.html', context=context)
+
+
+def search(request):
+    posts = []
+    if request.method == 'GET':
+        query = request.GET.get('q')
+        print(query)
+
+        if query:
+            posts = Post.objects.filter(
+                Q(title__icontains=query)
+            )
+        else:
+            posts = Post.objects.all()
+
+    context = {
+        'posts': posts
+    }
+
+    return render(request, 'blog.html', context=context)

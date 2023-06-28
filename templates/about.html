@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% load static %} {% block title %}
+<title>Kaiser Konok | About</title>
+{% endblock title %} {% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}" />
+{% endblock css %} {% block content %}
+
+<div class="about">
+  <div class="container">
+    <div class="profile">
+      <center>
+        <img
+          src="/media/profile/kaiserkonok.jpg"
+          alt="Kaiser Konok"
+          class="profile_image"
+        />
+      </center>
+    </div>
+
+    <div class="about_title">
+      <center><h1>Kaiser Konok</h1></center>
+    </div>
+
+    <div class="description">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+        reiciendis at quaerat vel delectus temporibus, voluptatem ipsam ut.
+        Placeat nesciunt quo molestias. Officiis mollitia asperiores esse
+        tempora quam expedita tempore, est commodi, sequi autem voluptatum earum
+        blanditiis nesciunt nam neque numquam sit nemo eligendi labore quae
+        ratione facilis repellendus. Corrupti voluptate corporis tempore
+        similique doloribus necessitatibus architecto saepe nulla atque ratione
+        minima numquam, eveniet obcaecati odio, nesciunt velit voluptas quod
+        provident. Expedita commodi sunt modi! Illum placeat corrupti quas est,
+        vero hic. Atque ipsum molestias iste rerum, voluptatibus aliquid? Nemo
+        amet quis deserunt esse nostrum laudantium quaerat adipisci sequi
+        laboriosam.
+      </p>
+    </div>
+
+    <div class="contact">
+      <strong>Contact Information:</strong>
+      <p>
+        <a href="https://facebook.com/kaiserkonok" target="_blank">Facebook</a>
+      </p>
+
+      <p>
+        <a href="https://instagram.com/kaiserkonok" target="_blank"
+          >Instagram</a
+        >
+      </p>
+
+      <p>
+        <a href="https://linkedin.com/in/kaiserkonok" target="_blank"
+          >Linkedin</a
+        >
+      </p>
+
+      <p>
+        <a href="https://fiverr.com/user/kaiserkonok" target="_blank">Fiverr</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

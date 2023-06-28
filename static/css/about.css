@@ -1,0 +1,15 @@
+.profile_image {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+
+.about {
+    width: 800px;
+    margin: auto;
+}
+
+.description p {
+    line-height: 40px;
+}
