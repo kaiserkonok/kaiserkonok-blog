@@ -9,3 +9,20 @@
 .search {
   margin-top: 30px;
 }
+
+.search-box {
+  width: 300px;
+}
+
+
+@media screen and (max-width: 410px) {
+  .search-box {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .search-box {
+    width: 150px;
+  }
+}
