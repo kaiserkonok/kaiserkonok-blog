@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="main">
+  {% for post in posts %}
+
+  <!--   container start -->
+  <div class="container">
+    <div class="thumbnail">
+      <a href="/"
+        ><img
+          class="thumbnail_image"
+          src="{{ post.thumbnail.url }}"
+          alt="{{ post.title }}"
+      /></a>
+    </div>
+    <div class="content">
+      <div class="post_title">
+        <a href="{% url 'post_detail' post.id %}">
+          <h1>{{ post.title }}</h1>
+        </a>
+      </div>
+      <div class="post_description">{{ post.content | truncatechars:115}}</div>
+
+      <div class="publish_time">
+        <small>{{ post.created_at }}</small>
+      </div>
+    </div>
+  </div>
+  <!--   container end -->
+
+  {% endfor %}
+</div>
+<!--  main end  -->
+
+{% endblock content %}
